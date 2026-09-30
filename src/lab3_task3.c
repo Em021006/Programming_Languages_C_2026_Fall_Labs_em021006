@@ -1,7 +1,7 @@
 /*
  * Lab 3, Task 3
- * Name: <your name>
- * Student ID: <your student ID>
+ * Name: Emma Fazilleau
+ * Student ID: 260ADB193
  *
  * Implement basic string handling functions.
  * Write your own versions of:
@@ -33,6 +33,8 @@
 int my_strlen(const char *str);
 void my_strcpy(char *dest, const char *src);
 
+// don't modify main
+
 int main(void) {
     char test[] = "Programming in C";
     char copy[100];
@@ -47,11 +49,23 @@ int main(void) {
 }
 
 // Implement functions below
+
 int my_strlen(const char *str) {
     // TODO: count characters until '\0'
+    int len = 0; // we intialize len
+    while (str[len] != '\0') { 
+        len ++; // we increment the value of len
+    }
+    return len;
     return 0; // placeholder
 }
 
 void my_strcpy(char *dest, const char *src) {
     // TODO: copy characters until '\0', then write the '\0' into dest
+    int i = 0;
+    while (src[i] != '\0') {
+        dest[i] = src[i];
+        i++; 
+    }
+    dest[i] = '\0';
 }

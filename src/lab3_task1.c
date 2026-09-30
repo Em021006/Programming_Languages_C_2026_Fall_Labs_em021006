@@ -1,7 +1,7 @@
 /*
  * Lab 3, Task 1
- * Name: <your name>
- * Student ID: <your student ID>
+ * Name: Emma Fazilleau
+ * Student ID: 	260ADB193
  *
  * Implement array algorithms:
  *   - find minimum value
@@ -40,6 +40,10 @@ int array_max(int arr[], int size);
 int array_sum(int arr[], int size);
 float array_avg(int arr[], int size);
 
+
+// do not modify main
+
+
 int main(void) {
     int arr[] = {10, 20, 5, 30, 15};
     int size = 5;
@@ -55,20 +59,42 @@ int main(void) {
 // Implement functions below
 int array_min(int arr[], int size) {
     // TODO: return smallest element
+    int min = arr[0]; // we begin by setting a minimum
+    for (int i = 1; i < size; i++){
+        if (arr[i] < min) {  // if the number is the lowest we replace the minimum value
+            min = arr[i];
+        } 
+    }
+    return min;
     return 0; // placeholder
 }
 
+
 int array_max(int arr[], int size) {
     // TODO: return largest element
+    int max = arr[0];
+    for (int i = 1; i < size; i++) {
+        if (arr[i] > max) {
+            max = arr[i];
+        }   
+    }
+    return max;
     return 0; // placeholder
 }
 
 int array_sum(int arr[], int size) {
     // TODO: return sum of elements
+    int sum = 0;
+    for (int i = 0; i < size; i++) {
+        sum += arr[i];
+    }
+    return sum;
     return 0; // placeholder
 }
 
 float array_avg(int arr[], int size) {
     // TODO: return average as float (avoid integer division)
+
+    return (float)array_sum(arr, size)/size;
     return 0.0f; // placeholder
 }
